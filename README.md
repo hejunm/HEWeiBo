@@ -1,7 +1,7 @@
 #微博客户端
 
 ##1， 实现效果：
-
+![效果](https://github.com/hejunm/HEWeiBo/blob/master/weiBo.gif)
 
 ##2， 功能： 
 

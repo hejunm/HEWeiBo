@@ -1,0 +1,105 @@
+//
+//  Prefix.pch
+//  Weibo
+//
+//  Created by 贺俊孟 on 15/9/12.
+//  Copyright (c) 2015年 贺俊孟. All rights reserved.
+//
+
+#ifndef Weibo_Prefix_pch
+#define Weibo_Prefix_pch
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "UIImage+Extension.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+category.h"
+#import "UIImageView+WebCache.h"
+#import "NSString+Emoji.h"
+#import "MBProgressHUD+MJ.h"
+
+    #ifdef DEBUG
+        #define HELog(...) NSLog(__VA_ARGS__)
+    #else
+        #define HELog(...)
+    #endif
+
+// 判断系统的版本是否在 iOS7及更高版本
+#define iOS7 [[UIDevice currentDevice].systemVersion doubleValue] >= 7.0
+
+// 颜色
+#define HEColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define HERandomColor HEColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+// 全局背景色
+#define HMGlobalBg HEColor(211, 211, 211)
+// 应用信息
+#define HEAppKey @"1167290190"
+#define HEAppSecret @"584fc44588aad371cac388fd0486cb0d"
+#define HERedirectURI @"http://hejunm.sina.com.cn"
+
+// 屏幕尺寸
+#define HMScreenW [UIScreen mainScreen].bounds.size.width
+
+
+/** 表情相关 */
+
+//表情键盘的高度
+#define HMEmotionKeyboardHeight 216
+
+// 表情距上下， 左右的间距
+#define HMEmotionMargin 10
+
+// 表情的最大行数
+#define HMEmotionMaxRows 3
+// 表情的最大列数
+#define HMEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define HMEmotionMaxCountPerPage (HMEmotionMaxRows * HMEmotionMaxCols - 1)
+
+// cell的计算参数
+// cell之间的间距
+#define HMStatusCellMargin 10
+
+// cell的内边距
+#define HMStatusCellInset 10
+
+// 原创微博昵称字体
+#define HMStatusOrginalNameFont [UIFont systemFontOfSize:13]
+// 原创微博时间字体
+#define HMStatusOrginalTimeFont [UIFont systemFontOfSize:11]
+// 原创微博来源字体
+#define HMStatusOrginalSourceFont HMStatusOrginalTimeFont
+// 原创微博正文字体
+#define HMStatusOrginalTextFont [UIFont systemFontOfSize:14]
+
+// 富文本字体
+#define HMStatusRichTextFont HMStatusOrginalTextFont
+
+// 转发微博昵称字体
+#define HMStatusRetweetedNameFont HMStatusOrginalNameFont
+// 转发微博正文字体
+#define HMStatusRetweetedTextFont HMStatusOrginalTextFont
+
+// 微博@， #， 链接等高亮文字颜色
+#define HMStatusHighTextColor HEColor(88, 161, 253)
+
+// 富文本里面出现的链接
+#define HMLinkText @"HMLinkText"
+
+// 通知
+// 表情选中的通知
+#define HMEmotionDidSelectedNotification @"HMEmotionDidSelectedNotification"
+// 表情键盘中， 点击删除按钮的通知
+#define HMEmotionDidDeletedNotification @"HMEmotionDidDeletedNotification"
+// 在通知 userInfo 中的key
+#define HMSelectedEmotion @"HMSelectedEmotion"
+
+#endif
+#endif

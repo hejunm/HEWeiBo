@@ -18,8 +18,6 @@
  */
 - (void)appendEmotion:(HEEmotion *)emotion{
     
- 
-    
     // 1, 判断表情类型
     if (emotion.isEmoji) { // 👿
         [self insertText:emotion.emoji];

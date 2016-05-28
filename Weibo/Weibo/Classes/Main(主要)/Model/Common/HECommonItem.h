@@ -31,6 +31,6 @@
 /** 创建含有标题和图标的item */
 + (instancetype)itemWithTitle:(NSString *)title Icon:(NSString *)icon;
 
-/** 创建只有图标的item */
+/** 创建只有标题的item */
 + (instancetype)itemWithTitle: (NSString *)title;
 @end

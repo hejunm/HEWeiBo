@@ -1,9 +1,6 @@
 #微博客户端
 
-##1， 实现效果：
-![效果](https://github.com/hejunm/HEWeiBo/blob/master/weiBo.gif)
-
-##2， 功能： 
+##1， 功能： 
 
      * 自定义cell,展示复杂的微博数据；
      * 自定义表情键盘；
